@@ -27,7 +27,7 @@ export default function UrlList() {
 
   return (
     <div>
-      <table className="w-full text-left min-h-10 bg-gray-950">
+      <table className="w-full text-left min-h-52">
         <thead>
           <tr className="border-b">
             <th>Origem</th>
