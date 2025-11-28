@@ -41,7 +41,6 @@ export default function UrlList() {
           {data.items.map((u) => (
             <tr key={u.id} className="border-b">
               <td className="p-2">{u.originalUrl}</td>
-
               <td className="p-2">
                 <a
                   href={u.shortUrl}
