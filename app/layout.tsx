@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "NeoShortener | Seu encurtador de URLs favorito",
   description: "Encurte suas URLs de forma rápida e fácil com NeoShortener.",
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({
