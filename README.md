@@ -75,8 +75,10 @@ A aplicação estará disponível em `http://localhost:3001` (já que o Nest est
 
 
 ## Deployment
-O projeto está sendo preparado para deploy em serviços como Render.
-Status atual: Em desenvolvimento (29/11/2025)
+O projeto está disponível no Vercel: \
+[https://neoshortener.vercel.app](https://neoshortener.vercel.app)
+
+(Mas ainda segue dependendo da API NestJS rodando localmente, ainda segue sendo hospedada no Render)
 
 ## Releases
 
