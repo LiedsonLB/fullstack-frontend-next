@@ -45,7 +45,7 @@ export default function UrlList() {
 
                 return (
                     <tr key={u.id} className="border-b text-center">
-                        <td className="p-2">{u.originalUrl}</td>
+                        <td className="p-2 max-w-[450px] break-words">{u.originalUrl}</td>
                         <td className="p-2">
                             <a
                                 href={shortUrlComplete}

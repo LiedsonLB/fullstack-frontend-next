@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Desafio Fullstack Next - NeoShortener encurtador de URLs (Francisco Liédson)
 
-## Getting Started
+![Logo NeoShortener](/public/logo.png)
 
-First, run the development server:
+## Sobre o Projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Este é o frontend do NeoShortener, um encurtador de URLs moderno e intuitivo, desenvolvido com Next.js 14, TypeScript e TailwindCSS.
+
+A aplicação se comunica com a API desenvolvida em NestJS, permitindo que o usuário insira uma URL, gere um link curto e acesse informações como o número de cliques e data de expiração — tudo de forma simples e rápida.
+
+## Tecnologias Utilizadas
+
+<div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="45"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="45"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="45"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" width="45"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/axios/axios-plain.svg" width="45"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" width="45"/> </div>
+
+## Objetivos do Desafio
+
+- Criar interface responsiva para geração de URLs curtas
+- Realizar chamadas para API NestJS
+- Exibir o link encurtado e dados adicionais
+- Possibilitar o redirecionamento via clique
+- Usar boas práticas de UI/UX e componentização
+
+## Funcionalidades
+
+1. Formulário para criação de URL encurtada.
+2. Exibição do link curto gerado.
+3. Validação e feedback de erro.
+4. Loading states e UX aprimorada.
+5. Consumo da API NestJS.
+6. Campo de expiração opcional da URL.
+
+## Configuração do Projeto
+
+```javascript
+src/
+ ├── app/
+ │    ├── page.tsx
+ │    └── layout.tsx
+ │    └── globals.css
+ ├── components/
+ │    ├── UrlForm.tsx
+ │    └── UrlList.tsx
+ └── lib/
+      └── api.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Passos para Executar Localmente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+####  Clone o repositório:
+```bash
+git clone https://github.com/LiedsonLB/fullstack-frontend-next.git
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### Instalando dependências:
+```bash
+cd fullstack-frontend-next
+npm install
+```
 
-## Learn More
+#### Configure o projeto da API Nest de ambiente:
+Rode primeiro a API NestJS seguindo as instruções no repositório correspondente e garanta que ela esteja rodando na porta correta:
+```
+localhost:3000 (por padrão)
+```
+#### Inicie a aplicação:
+```bash
+npm run dev
+```
+A aplicação estará disponível em `http://localhost:3001` (já que o Nest está rodando na 3000).
+  
+## Imagens do Projeto
 
-To learn more about Next.js, take a look at the following resources:
+## Tela de Criação de URL
+![Criar URL](/snapshots/neoshortener.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
+O projeto está sendo preparado para deploy em serviços como Render.
+Status atual: Em desenvolvimento (29/11/2025)
 
-## Deploy on Vercel
+## Releases
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Release v1.0 ✅
