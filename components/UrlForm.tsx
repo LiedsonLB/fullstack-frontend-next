@@ -15,7 +15,7 @@ export default function UrlForm({ onCreated }: { onCreated?: () => void }) {
     setLoading(true);
 
     try {
-      const res = await axios.post('/api/urls', { originalUrl });
+      const res = await axios.post('http://localhost:3000/api/v1/urls', { originalUrl });
       setResult(res.data);
       setOriginalUrl('');
       onCreated?.();

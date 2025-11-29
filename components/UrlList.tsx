@@ -8,7 +8,7 @@ export default function UrlList() {
   const [copiedId, setCopiedId] = useState<number | null>(null);
 
   async function fetchList() {
-    const res = await axios.get(`/api/urls?page=${page}&per_page=10`);
+    const res = await axios.get(`http://localhost:3000/api/v1/urls?page=${page}&per_page=10`);
     setData(res.data);
   }
 
