@@ -8,7 +8,7 @@ export default function Home() {
   const [refreshKey, setRefreshKey] = useState(0);
 
   return (
-    <main className="max-w-3xl mx-auto p-6">
+    <main className="max-w-7xl mx-auto p-6">
       <Image
         src="/logo.png"
         alt="NeoShortener Logo"
@@ -18,6 +18,7 @@ export default function Home() {
       />
       <br />
       <UrlForm onCreated={() => setRefreshKey(k => k + 1)} />
+      <br />
       <div className="mt-8">
         <UrlList key={refreshKey} />
       </div>

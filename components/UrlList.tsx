@@ -27,9 +27,9 @@ export default function UrlList() {
 
   return (
     <div>
-      <table className="w-full text-left min-h-52">
+      <table className="w-full min-h-52">
         <thead>
-          <tr className="border-b">
+          <tr className="border-b text-center">
             <th>Origem</th>
             <th>Encurtada</th>
             <th>Cliques</th>
@@ -38,33 +38,39 @@ export default function UrlList() {
         </thead>
 
         <tbody>
-          {data.items.map((u) => (
-            <tr key={u.id} className="border-b">
-              <td className="p-2">{u.originalUrl}</td>
-              <td className="p-2">
-                <a
-                  href={u.shortUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sky-600 underline"
-                >
-                  {u.shortUrl}
-                </a>
-              </td>
+          {data.items.map((u) => {
+                const shortUrlComplete = typeof window !== 'undefined'
+                    ? `http://localhost:3000/${u.shortCode}`
+                    : `/${u.shortCode}`;
 
-              <td className="p-2">{u.hits}</td>
+                return (
+                    <tr key={u.id} className="border-b text-center">
+                        <td className="p-2">{u.originalUrl}</td>
+                        <td className="p-2">
+                            <a
+                                href={shortUrlComplete}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="text-sky-600 underline"
+                            >
+                                {shortUrlComplete}
+                            </a>
+                        </td>
 
-              <td className="p-2">
-                <button
-                  onClick={() => handleCopy(u.shortUrl, u.id)}
-                  className="px-3 py-1 border rounded"
-                >
-                  {copiedId === u.id ? "Copiado!" : "Copiar"}
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+                        <td className="p-2">{u.hits}</td>
+
+                        <td className="p-2">
+                            <button
+                                onClick={() => handleCopy(shortUrlComplete, u.id)}
+                                className="px-3 py-1 border rounded cursor-pointer hover:bg-gray-200 hover:text-black"
+                            >
+                                {copiedId === u.id ? "Copiado!" : "Copiar"}
+                            </button>
+                        </td>
+                    </tr>
+                );
+            })}
+        </tbody>
       </table>
 
       <div className="mt-4 flex gap-2 justify-around items-center w-full">
